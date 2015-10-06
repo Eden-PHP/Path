@@ -16,6 +16,6 @@
 		"eden/string": "4.x-dev"
     },
     "autoload": {
-         "psr-4": { "Eden\\Path\\": "/src" }
+         "psr-4": { "Eden\\Path\\": "src/" }
     }
 }
