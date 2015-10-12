@@ -25,6 +25,8 @@ class Index extends Base implements \ArrayAccess
      * Preset and auto format the path
      *
      * @param string|null   $path path
+     * @param *string
+     *
      * @return void
      */
     public function __construct($path = null)
