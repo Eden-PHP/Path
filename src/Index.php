@@ -12,9 +12,10 @@ namespace Eden\Path;
 /**
  * General available methods for common pathing issues
  *
- * @vendor Eden
- * @package path
- * @author Christian Blanquera cblanquera@openovate.com
+ * @vendor   Eden
+ * @package  path
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base implements \ArrayAccess
 {
@@ -25,6 +26,7 @@ class Index extends Base implements \ArrayAccess
      * Preset and auto format the path
      *
      * @param *string
+     *
      * @return void
      */
     public function __construct($path = null)
@@ -53,6 +55,7 @@ class Index extends Base implements \ArrayAccess
      * given must exist.
      *
      * @param string|null root path
+     *
      * @return this
      */
     public function absolute($root = null)
@@ -92,6 +95,7 @@ class Index extends Base implements \ArrayAccess
      * Adds a path to the existing one
      *
      * @param *string[,string..]
+     *
      * @return this
      */
     public function append($path)
@@ -126,7 +130,8 @@ class Index extends Base implements \ArrayAccess
     /**
      * isset using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
+     * @param *scalar|null|bool $offset The key to test if exists
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -141,6 +146,7 @@ class Index extends Base implements \ArrayAccess
      * returns data using the ArrayAccess interface
      *
      * @param *scalar|null|bool
+     *
      * @return string|null
      */
     public function offsetGet($offset)
@@ -168,8 +174,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * Sets data using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @param *mixed
+     * @param *scalar|null|bool $offset The key to set
+     * @param mixed             $value  The value the key should be set to
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -195,8 +202,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * unsets using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return bool
+     * @param *scalar|null|bool $offset The key to unset
+     *
+     * @return void
      */
     public function offsetUnset($offset)
     {
@@ -206,6 +214,7 @@ class Index extends Base implements \ArrayAccess
      * Adds a path before the existing one
      *
      * @param *string[,string..]
+     *
      * @return this
      */
     public function prepend($path)
@@ -250,6 +259,7 @@ class Index extends Base implements \ArrayAccess
      * Replaces the last path with this one
      *
      * @param *string
+     *
      * @return this
      */
     public function replace($path)
@@ -279,6 +289,7 @@ class Index extends Base implements \ArrayAccess
      * 3. Must not have double forward slashes
      *
      * @param *string
+     *
      * @return string
      */
     protected function format($path)
