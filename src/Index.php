@@ -1,9 +1,9 @@
 <?php //-->
-/*
- * This file is part of the Utility package of the Eden PHP Library.
- * (c) 2013-2014 Openovate Labs
+/**
+ * This file is part of the Eden PHP Library.
+ * (c) 2014-2016 Openovate Labs
  *
- * Copyright and license information can be found at LICENSE
+ * Copyright and license information can be found at LICENSE.txt
  * distributed with this package.
  */
 
@@ -12,9 +12,10 @@ namespace Eden\Path;
 /**
  * General available methods for common pathing issues
  *
- * @vendor Eden
- * @package path
- * @author Christian Blanquera cblanquera@openovate.com
+ * @package  Eden
+ * @category Path
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Index extends Base implements \ArrayAccess
 {
@@ -24,7 +25,8 @@ class Index extends Base implements \ArrayAccess
     /**
      * Preset and auto format the path
      *
-     * @param *string
+     * @param string|null $path the path string
+     *
      * @return void
      */
     public function __construct($path = null)
@@ -52,8 +54,9 @@ class Index extends Base implements \ArrayAccess
      * as described on the server. The path
      * given must exist.
      *
-     * @param string|null root path
-     * @return this
+     * @param string|null $root The root path
+     *
+     * @return Eden\Path\Index
      */
     public function absolute($root = null)
     {
@@ -91,8 +94,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * Adds a path to the existing one
      *
-     * @param *string[,string..]
-     * @return this
+     * @param *string $path The extra path to append
+     *
+     * @return Eden\Path\Index
      */
     public function append($path)
     {
@@ -126,7 +130,8 @@ class Index extends Base implements \ArrayAccess
     /**
      * isset using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
+     * @param *scalar|null|bool $offset The key to test if exists
+     *
      * @return bool
      */
     public function offsetExists($offset)
@@ -140,8 +145,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * returns data using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return string|null
+     * @param *scalar|null|bool $offset The key to get
+     *
+     * @return mixed
      */
     public function offsetGet($offset)
     {
@@ -168,8 +174,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * Sets data using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @param *mixed
+     * @param *scalar|null|bool $offset The key to set
+     * @param mixed             $value  The value the key should be set to
+     *
      * @return void
      */
     public function offsetSet($offset, $value)
@@ -195,8 +202,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * unsets using the ArrayAccess interface
      *
-     * @param *scalar|null|bool
-     * @return bool
+     * @param *scalar|null|bool $offset The key to unset
+     *
+     * @return void
      */
     public function offsetUnset($offset)
     {
@@ -205,8 +213,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * Adds a path before the existing one
      *
-     * @param *string[,string..]
-     * @return this
+     * @param *string $path The path to prepend
+     *
+     * @return Eden\Path\Index
      */
     public function prepend($path)
     {
@@ -230,7 +239,7 @@ class Index extends Base implements \ArrayAccess
     /**
      * Remove the last path
      *
-     * @return this
+     * @return Eden\Path\Index
      */
     public function pop()
     {
@@ -249,8 +258,9 @@ class Index extends Base implements \ArrayAccess
     /**
      * Replaces the last path with this one
      *
-     * @param *string
-     * @return this
+     * @param *string $path replaces the last path with this
+     *
+     * @return Eden\Path\Index
      */
     public function replace($path)
     {
@@ -278,7 +288,8 @@ class Index extends Base implements \ArrayAccess
      * 2. Must not end with forward slash
      * 3. Must not have double forward slashes
      *
-     * @param *string
+     * @param *string $path The path to format
+     *
      * @return string
      */
     protected function format($path)
