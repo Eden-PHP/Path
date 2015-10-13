@@ -1,6 +1,6 @@
 <?php //-->
 /**
- * This file is part of the Eden package.
+ * This file is part of the Eden PHP Library.
  * (c) 2014-2016 Openovate Labs
  *
  * Copyright and license information can be found at LICENSE.txt
@@ -12,9 +12,10 @@ namespace Eden\Path;
 /**
  * Argument Class
  *
- * @vendor Eden
- * @package Path
- * @author Christian Blanquera cblanquera@openovate.com
+ * @package  Eden
+ * @category Path
+ * @author   Christian Blanquera <cblanquera@openovate.com>
+ * @standard PSR-2
  */
 class Argument extends \Eden\Core\Argument
 {
