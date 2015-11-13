@@ -1,11 +1,18 @@
 ![logo](http://eden.openovate.com/assets/images/cloud-social.png) Eden Path
 ====
-[![Build Status](https://api.travis-ci.org/Eden-PHP/Path.png)](https://travis-ci.org/Eden-PHP/Path)
+[![Build Status](https://api.travis-ci.org/Eden-PHP/Path.svg)](https://travis-ci.org/Eden-PHP/Path)
 ====
 
-- [Install](#install)
-- [Introduction](#intro)
-- [Contributing](#contributing)
+ - [Install](#install)
+ - [Introduction](#intro)
+ - [API](#api)
+    - [absolute](#absolute)
+    - [append](#append)
+    - [getArray](#getArray)
+    - [prepend](#prepend)
+    - [pop](#pop)
+    - [replace](#replace)
+ - [Contributing](#contributing)
 
 ====
 
@@ -19,9 +26,158 @@
 <a name="intro"></a>
 ## Introduction
 
-TODO
+Instantiate path in this manner.
+
+```
+$path = eden('path', '/some/path');
+```
 
 ====
+
+<a name="api"></a>
+## API
+
+==== 
+
+<a name="absolute"></a>
+
+### absolute
+
+Attempts to get the full absolute path as described on the server. The path given must exist. 
+
+#### Usage
+
+```
+eden('path', '/some/path')->absolute(string|null $root);
+```
+
+#### Parameters
+
+ - `string|null $root` - The root path
+
+Returns `Eden\Path\Index`
+
+#### Example
+
+```
+eden('path', '/some/path')->absolute();
+```
+
+==== 
+
+<a name="append"></a>
+
+### append
+
+Adds a path to the existing one 
+
+#### Usage
+
+```
+eden('path', '/some/path')->append(*string $path);
+```
+
+#### Parameters
+
+ - `*string $path` - The extra path to append
+
+Returns `Eden\Path\Index`
+
+#### Example
+
+```
+eden('path', '/some/path')->append('foo');
+```
+
+==== 
+
+<a name="getArray"></a>
+
+### getArray
+
+Returns the path array 
+
+#### Usage
+
+```
+eden('path', '/some/path')->getArray();
+```
+
+#### Parameters
+
+Returns `array`
+
+==== 
+
+<a name="prepend"></a>
+
+### prepend
+
+Adds a path before the existing one 
+
+#### Usage
+
+```
+eden('path', '/some/path')->prepend(*string $path);
+```
+
+#### Parameters
+
+ - `*string $path` - The path to prepend
+
+Returns `Eden\Path\Index`
+
+#### Example
+
+```
+eden('path', '/some/path')->prepend('foo');
+```
+
+==== 
+
+<a name="pop"></a>
+
+### pop
+
+Remove the last path 
+
+#### Usage
+
+```
+eden('path', '/some/path')->pop();
+```
+
+#### Parameters
+
+Returns `Eden\Path\Index`
+
+==== 
+
+<a name="replace"></a>
+
+### replace
+
+Replaces the last path with this one 
+
+#### Usage
+
+```
+eden('path', '/some/path')->replace(*string $path);
+```
+
+#### Parameters
+
+ - `*string $path` - replaces the last path with this
+
+Returns `Eden\Path\Index`
+
+#### Example
+
+```
+eden('path', '/some/path')->replace('foo');
+```
+
+==== 
 
 <a name="contributing"></a>
 #Contributing to Eden
